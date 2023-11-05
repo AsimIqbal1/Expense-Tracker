@@ -1,86 +1,17 @@
 import { Avatar, AvatarGroup, Box, Button, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Tr, useDisclosure } from "@chakra-ui/react";
-import { faBowlFood, faChevronRight, faCreditCard, faDollar, faReceipt } from "@fortawesome/free-solid-svg-icons";
-import { faBowlingBall } from "@fortawesome/free-solid-svg-icons/faBowlingBall";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENCY } from "constants/UserConfig.constants";
 import { useState } from "react";
 import { StyledCard } from "ui/shared";
-import { WithCardWrapper } from "..";
+import { Transactions, WithCardWrapper } from "..";
+import { TRANSACTIONS } from "./RecentTransactions.data";
 
 const RecentTransactions = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-
-    const transactions = [
-        {
-            id: 1,
-            date: "02-11-2023",
-            title: 'Lunch share to ahmed',
-            category: {
-                id: 1,
-                name: 'Lunch',
-                icon: <FontAwesomeIcon icon={faBowlFood} />,
-            },
-            paidThroughWallet: [
-                {
-                    id: 'wallet-1',
-                    name: 'Cash',
-                    amount: 500,
-                    icon: <FontAwesomeIcon icon={faDollar} />,
-                },
-            ],
-            amount: 500,
-            details: ''
-        },
-        {
-            id: 2,
-            date: "02-11-2023",
-            title: 'Electricity Bill',
-            category: {
-                id: 2,
-                name: 'Bills',
-                icon: <FontAwesomeIcon icon={faReceipt} />,
-            },
-            paidThroughWallet: [
-                {
-                    id: 'wallet-2',
-                    name: 'Bank Account',
-                    amount: 4300,
-                    icon: <FontAwesomeIcon icon={faCreditCard} />,
-                },
-            ],
-            amount: 4300,
-            details: ''
-        },
-        {
-            id: 3,
-            date: "02-11-2023",
-            title: 'Cricket',
-            category: {
-                id: 3,
-                name: 'Sports',
-                icon: <FontAwesomeIcon icon={faBowlingBall} />,
-            },
-            paidThroughWallet: [
-                {
-                    id: 'wallet-1',
-                    name: 'Cash',
-                    amount: 700,
-                    icon: <FontAwesomeIcon icon={faDollar} />,
-                },
-                {
-                    id: 'wallet-2',
-                    name: 'Bank Account',
-                    amount: 500,
-                    icon: <FontAwesomeIcon icon={faCreditCard} />,
-                },
-            ],
-            amount: 1200,
-            details: ''
-        },
-    ];
-    const [openedTransaction, setOpenedTransaction] = useState<typeof transactions[0] | undefined>();
+    const [openedTransaction, setOpenedTransaction] = useState<Transactions>();
 
     const onTransactionOpen = (transaction: any) => () => {
         setOpenedTransaction(transaction);
@@ -96,7 +27,7 @@ const RecentTransactions = () => {
         <>
             <StyledCard title="Recent Transactions">
                 <WithCardWrapper>
-                    {transactions.map(transaction => (
+                    {TRANSACTIONS.map(transaction => (
                         // put in shadow on this flex box
                         <Flex onClick={onTransactionOpen(transaction)} key={transaction.id} justifyContent="space-between" textAlign={"start"} _hover={{ backgroundColor: 'blue.200', cursor: 'pointer' }} borderRadius={"0.5rem"} p={"0.5rem 0.75rem"}>
                             <Flex gap={4} alignItems="center">
