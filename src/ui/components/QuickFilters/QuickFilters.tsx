@@ -26,6 +26,7 @@ const QuickFilters = () => {
         <Flex gap={2}>
             {buttons.map(button => (
                 <Button
+                    key={button.text}
                     variant={activeButton === button.value ? "solid" : "ghost"}
                     colorScheme="blue"
                     onClick={onButtonClick(button.value)}

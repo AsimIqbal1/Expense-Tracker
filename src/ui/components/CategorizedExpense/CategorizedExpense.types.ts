@@ -1,6 +1,6 @@
 import React from "react";
 
-export type Expense = {
+export type CategoryExpense = {
     category: string;
     amount: number;
     icon: React.ReactElement;

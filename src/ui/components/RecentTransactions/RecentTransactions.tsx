@@ -36,7 +36,7 @@ const RecentTransactions = () => {
                                     <Text>{transaction.title}</Text>
                                     <AvatarGroup>
                                         {transaction.paidThroughWallet.map((wallet) => (
-                                            <Avatar size="xs" icon={wallet.icon} />
+                                            <Avatar key={wallet.id} size="xs" icon={wallet.icon} />
                                         ))}
                                     </AvatarGroup>
                                     <Text color="gray" fontSize="sm" mt="0.5rem">{transaction.date}</Text>
@@ -51,7 +51,7 @@ const RecentTransactions = () => {
                     ))}
                 </WithCardWrapper>
             </StyledCard>
-            <Modal isOpen={isOpen} onClose={onTransactionClose}>
+            <Modal isCentered isOpen={isOpen} onClose={onTransactionClose}>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>Transaction Details</ModalHeader>

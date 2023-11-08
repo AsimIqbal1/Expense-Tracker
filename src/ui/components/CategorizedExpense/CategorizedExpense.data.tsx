@@ -1,8 +1,8 @@
 import { faUtensils, faCar, faReceipt, faBaseball, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Expense } from ".";
+import { CategoryExpense } from ".";
 
-export const EXPENSES: Expense[] = [
+export const EXPENSES: CategoryExpense[] = [
     {
         category: 'Food',
         amount: 3600,
