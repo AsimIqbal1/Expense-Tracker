@@ -5,7 +5,7 @@ export const ADD_EXPENSE_FORMIK = {
         amount: undefined,
         title: undefined,
         category: undefined,
-        wallet: undefined,
+        wallet: [],
         date: undefined,
         note: undefined
     },
