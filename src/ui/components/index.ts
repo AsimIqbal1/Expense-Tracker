@@ -5,3 +5,4 @@ export * from './QuickFilters';
 export * from './RecentTransactions';
 export * from './AddExpense';
 export * from './Sidebar';
+export * from './ThemeSwitcher';
