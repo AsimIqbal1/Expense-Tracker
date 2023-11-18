@@ -1,6 +1,6 @@
 import { RootRoute } from 'routes/RootRoute'
-import './App.scss'
 import { ThemeSwitcher } from 'ui/components/ThemeSwitcher'
+import './App.scss'
 
 function App() {
   return (

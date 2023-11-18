@@ -11,7 +11,7 @@ const CreatableSelect = (props: ICreatableSelectProps) => {
             styles={generateBaseSelectStyles(colorMode)}
             theme={(selectTheme) => ({
                 ...selectTheme,
-                ...theme
+                ...theme as any
             })}
             {...props}
 

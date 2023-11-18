@@ -11,7 +11,6 @@ const LandingPage = () => {
                 <CreateWallet />
             </Flex>
 
-
             <Flex justify="space-between">
                 <Text fontFamily="custom-bold" fontSize={"3xl"}>Overview</Text>
                 <QuickFilters />

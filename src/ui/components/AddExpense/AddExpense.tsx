@@ -22,14 +22,12 @@ import {
     useColorMode,
     useDisclosure
 } from "@chakra-ui/react";
-// import { faAdd } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Field, FieldProps, Formik } from "formik";
-import { ADD_EXPENSE_FORMIK } from "./formik";
 import { CreatableSelect } from "ui/shared/ReactSelect";
-import theme from "theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faBaseball, faCar, faReceipt, faTrashCan, faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { ADD_EXPENSE_FORMIK } from "./formik";
+import theme from "theme";
 
 const AddExpense = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,7 +58,6 @@ const AddExpense = () => {
             };
         }
 
-        console.log(state);
         formikSetter("wallet", state);
     }
 
@@ -84,13 +81,16 @@ const AddExpense = () => {
                                 <ModalHeader>Add new expense</ModalHeader>
                                 <ModalCloseButton />
                                 <ModalBody>
+
+                                    {/* TITLE FIELD */}
                                     <FormControl isRequired isInvalid={!!errors.title && touched.title}>
                                         <FormLabel>Title</FormLabel>
                                         <Field as={Input} name="title" />
                                         {errors.title && <FormErrorMessage>{errors.title}</FormErrorMessage>}
                                     </FormControl>
 
-                                    <FormControl isRequired isInvalid={!!errors.amount && touched.amount} mt={"0.5rem"}>
+                                    {/* AMOUNT FIELD */}
+                                    <FormControl isRequired isInvalid={!!errors.amount && touched.amount} mt={theme.space.x2}>
                                         <FormLabel>Amount</FormLabel>
                                         <Field name="amount">
                                             {({ field }: FieldProps) => (
@@ -104,89 +104,101 @@ const AddExpense = () => {
                                         {errors.amount && <FormErrorMessage>{errors.amount}</FormErrorMessage>}
                                     </FormControl>
 
-                                    <FormControl isInvalid={!!errors.date} mt={"0.5rem"}>
+                                    {/* DATE FIELD */}
+                                    <FormControl isInvalid={!!errors.date} mt={theme.space.x2}>
                                         <FormLabel>Date</FormLabel>
                                         <Field as={Input} name={"date"} type="date" />
                                         {errors.date && <FormErrorMessage>{errors.date}</FormErrorMessage>}
                                     </FormControl>
 
-                                    <FormControl isInvalid={!!errors.wallet} mt={"0.6rem"}  >
+                                    {/* PAYMENT MODE FIELDS */}
+                                    <FormControl isInvalid={!!errors.wallet} mt={theme.space.x2}  >
                                         <FormLabel mb={0}>{"Payment mode"}</FormLabel>
                                         <Flex flexDirection={"column"} gap={theme.space.x2} p={theme.space.x4} border={`1px solid ${theme.colors.border[colorMode]}`} borderRadius={theme.borderRadius.md}>
                                             {values.wallet.map((value: any, index) => (
                                                 <Flex key={index} gap={theme.space.x3} flexWrap={"wrap"}>
 
                                                     <Flex flex={2} flexDirection={"column"}>
-                                                        <FormLabel fontSize={"sm"}>Wallet</FormLabel>
-                                                        <Field name={`wallet`}>
-                                                            {({ field }: FieldProps) => (
-                                                                <CreatableSelect
-                                                                    {...field}
-                                                                    value={value.wallet}
-                                                                    options={[
-                                                                        {
-                                                                            value: '1',
-                                                                            label: 'option 1',
-                                                                        },
-                                                                        {
-                                                                            value: '2',
-                                                                            label: 'option 2',
-                                                                        },
-                                                                        {
-                                                                            value: '3',
-                                                                            label: 'option 3',
-                                                                        },
-                                                                        {
-                                                                            value: '4',
-                                                                            label: 'option 4',
-                                                                        },
-                                                                        {
-                                                                            value: '5',
-                                                                            label: 'option 5',
-                                                                        },
-                                                                    ]}
-                                                                    onChange={
-                                                                        (changedValue) =>
-                                                                            handleWalletContributionChange(
-                                                                                changedValue,
-                                                                                field.value,
-                                                                                "wallet",
-                                                                                index,
-                                                                                setFieldValue
-                                                                            )}
-                                                                />
-                                                            )}
-                                                        </Field>
+
+                                                        {/* WALLET FIELD */}
+                                                        <FormControl >
+                                                            <FormLabel fontSize={"sm"}>Wallet</FormLabel>
+                                                            <Field name={`wallet`}>
+                                                                {({ field }: FieldProps) => (
+                                                                    <CreatableSelect
+                                                                        {...field}
+                                                                        value={value.wallet}
+                                                                        options={[
+                                                                            {
+                                                                                value: '1',
+                                                                                label: 'option 1',
+                                                                            },
+                                                                            {
+                                                                                value: '2',
+                                                                                label: 'option 2',
+                                                                            },
+                                                                            {
+                                                                                value: '3',
+                                                                                label: 'option 3',
+                                                                            },
+                                                                            {
+                                                                                value: '4',
+                                                                                label: 'option 4',
+                                                                            },
+                                                                            {
+                                                                                value: '5',
+                                                                                label: 'option 5',
+                                                                            },
+                                                                        ]}
+                                                                        onChange={
+                                                                            (changedValue) =>
+                                                                                handleWalletContributionChange(
+                                                                                    changedValue,
+                                                                                    field.value,
+                                                                                    "wallet",
+                                                                                    index,
+                                                                                    setFieldValue
+                                                                                )}
+                                                                    />
+                                                                )}
+                                                            </Field>
+                                                        </FormControl>
+
                                                     </Flex>
                                                     <Flex gap={theme.space.x2} flex={2}>
                                                         <Box>
-                                                            <FormLabel fontSize={"sm"}>Amount</FormLabel>
-                                                            <Field name={`wallet`}>
-                                                                {({ field }: FieldProps) => (
-                                                                    <NumberInput>
-                                                                        <NumberInputField
-                                                                            {...field}
-                                                                            value={Number(value.amount)}
-                                                                            onChange={
-                                                                                (e) => {
-                                                                                    console.log("field: ", field)
-                                                                                    handleWalletContributionChange(
-                                                                                        e.target.value,
-                                                                                        field.value,
-                                                                                        "amount",
-                                                                                        index,
-                                                                                        setFieldValue
-                                                                                    )
-                                                                                }
-                                                                            } />
-                                                                    </NumberInput>
-                                                                )}
-                                                            </Field>
+
+                                                            {/* WALLET AMOUNT FIELD */}
+                                                            <FormControl>
+                                                                <FormLabel fontSize={"sm"}>Amount</FormLabel>
+                                                                <Field name={`wallet`}>
+                                                                    {({ field }: FieldProps) => (
+                                                                        <NumberInput>
+                                                                            <NumberInputField
+                                                                                {...field}
+                                                                                value={Number(value.amount)}
+                                                                                onChange={
+                                                                                    (e) => {
+                                                                                        console.log("field: ", field)
+                                                                                        handleWalletContributionChange(
+                                                                                            e.target.value,
+                                                                                            field.value,
+                                                                                            "amount",
+                                                                                            index,
+                                                                                            setFieldValue
+                                                                                        )
+                                                                                    }
+                                                                                } />
+                                                                        </NumberInput>
+                                                                    )}
+                                                                </Field>
+                                                            </FormControl>
                                                         </Box>
 
+                                                        {/* WALLET DELETE BUTTON */}
                                                         <IconButton
                                                             icon={<FontAwesomeIcon icon={faTrashCan} />}
-                                                            aria-label={"add expense"}
+                                                            aria-label={"delete wallet"}
                                                             variant="outline"
                                                             isRound
                                                             size="sm"
@@ -198,6 +210,8 @@ const AddExpense = () => {
                                                     </Flex>
                                                 </Flex>
                                             ))}
+
+                                            {/* WALLET ADD BUTTON */}
                                             <Button
                                                 variant={"outline"}
                                                 colorScheme="blue"
@@ -205,9 +219,42 @@ const AddExpense = () => {
                                                 onClick={() => onAddWalletRequest(values.wallet, setFieldValue)}
                                             > Attach{values.wallet.length > 0 ? " another" : ""} wallet</Button>
                                         </Flex>
-
                                     </FormControl>
-                                    <FormControl isInvalid={!!errors.note} mt={"0.5rem"}>
+                                    {/* WALLET FIELD */}
+                                    <FormControl isInvalid={!!errors.category} mt={theme.space.x2}>
+                                        <FormLabel >Category</FormLabel>
+                                        <Field name={`category`}>
+                                            {({ field }: FieldProps) => (
+                                                <CreatableSelect
+                                                    {...field}
+                                                    options={[
+                                                        {
+                                                            value: '1',
+                                                            label: <><FontAwesomeIcon icon={faBaseball} /> Sports</>,
+                                                        },
+                                                        {
+                                                            value: '2',
+                                                            label: <><FontAwesomeIcon icon={faUtensils} /> Food</>,
+                                                        },
+                                                        {
+                                                            value: '3',
+                                                            label: <><FontAwesomeIcon icon={faCar} /> Travel</>,
+                                                        },
+                                                        {
+                                                            value: '4',
+                                                            label: <><FontAwesomeIcon icon={faReceipt} /> Bills</>,
+                                                        },
+                                                    ]}
+                                                    onChange={
+                                                        (changedValue) =>
+                                                            setFieldValue(field.name, changedValue)
+                                                    }
+                                                />
+                                            )}
+                                        </Field>
+                                    </FormControl>
+                                    {/* NOTES FIELD */}
+                                    <FormControl isInvalid={!!errors.note} mt={theme.space.x2}>
                                         <FormLabel>Notes</FormLabel>
                                         <Field as={Textarea} name="notes" />
                                         {errors.note && <FormHelperText>{errors.note}</FormHelperText>}

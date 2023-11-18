@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ROUTES } from 'routes/Routes.constants';
+import { ROUTE_PAGES } from 'routes/Routes.constants';
 import { Spinner as Loader } from '@chakra-ui/react'
-import { LandingPage } from 'pages/LandingPage';
+import { Sidebar } from 'ui/components';
 
 function SuspenceHoc(component: React.ReactElement) {
   return (
@@ -15,10 +15,14 @@ function SuspenceHoc(component: React.ReactElement) {
 export function RootRoute() {
   return (
     <Router>
-      <Routes>
-        <Route path={ROUTES.LANDING} element={<LandingPage />} />
-        {/* <Route path="*" element={SuspenceHoc(<NotFound />)} /> */}
-      </Routes>
+      <Sidebar pages={ROUTE_PAGES}>
+        <Routes>
+          {ROUTE_PAGES.map(page => <Route key={page.id} path={page.route} element={<page.Component />} />)}
+
+          {/* <Route path="*" element={SuspenceHoc(<NotFound />)} /> */}
+        </Routes>
+      </Sidebar>
+
     </Router>
   );
 }
