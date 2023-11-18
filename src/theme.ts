@@ -1,5 +1,135 @@
 import { extendTheme } from '@chakra-ui/react';
 
+type ColorMode = 'light' | 'dark';
+
+interface ThemeConfig {
+    initialColorMode: ColorMode;
+    useSystemColorMode: boolean;
+}
+
+interface ThemeColors {
+    primary: {
+        light: string;
+        dark: string;
+    };
+    secondary: {
+        light: string;
+        dark: string;
+    };
+    background: {
+        light: string;
+        dark: string;
+    };
+    text: {
+        light: string;
+        dark: string;
+    };
+    border: {
+        light: string;
+        dark: string;
+    };
+    transparent: {
+        light: string;
+        dark: string;
+    };
+}
+
+interface ThemeFonts {
+    normal: string;
+    bold: string;
+    semiBold: string;
+}
+
+interface ThemeFontSizes {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+    '3xl': string;
+    '4xl': string;
+    '5xl': string;
+    '6xl': string;
+}
+
+interface ThemeBorderRadius {
+    sm: string;
+    md: string;
+    lg: string;
+}
+
+interface ThemeSpace {
+    x1: string;
+    x2: string;
+    x3: string;
+    x4: string;
+    x5: string;
+    x6: string;
+    x7: string;
+    x8: string;
+}
+
+interface ThemeSize {
+    x1: string;
+    x2: string;
+    x3: string;
+    x4: string;
+    x5: string;
+    fullScreenWidth: string;
+    fullScreenHeight: string;
+    fullParentWidth: string;
+    fullParentHeight: string;
+}
+
+interface ThemeButtonVariants {
+    solid: {
+        bg: string;
+        color: string;
+        _hover: {
+            bg: string;
+        };
+    };
+}
+
+interface ThemeComponents {
+    Button: {
+        baseStyle: {
+            borderRadius: string;
+        };
+        variants: ThemeButtonVariants;
+    };
+    Input: {
+        baseStyle: {
+            borderColor: string;
+        };
+    };
+}
+
+interface ThemeStyles {
+    global: (props: { colorMode: ColorMode }) => {
+        body: {
+            color: string;
+            bg: string;
+        };
+        '*::placeholder': {
+            color: string;
+        };
+    };
+}
+
+interface ITheme {
+    config: ThemeConfig;
+    colors: ThemeColors;
+    fonts: ThemeFonts;
+    fontSizes: ThemeFontSizes;
+    borderRadius: ThemeBorderRadius;
+    space: ThemeSpace;
+    size: ThemeSize;
+    components: ThemeComponents;
+    styles: ThemeStyles;
+}
+
 const customTheme = extendTheme({
     config: {
         initialColorMode: 'light',
@@ -72,7 +202,11 @@ const customTheme = extendTheme({
         x2: '10rem',
         x3: '15rem',
         x4: '20rem',
-        x5: '25rem'
+        x5: '25rem',
+        fullScreenWidth: '100vw',
+        fullScreenHeight: '100vh',
+        fullParentWidth: '100%',
+        fullParentHeight: '100%',
     },
     components: {
         Button: {
@@ -106,6 +240,6 @@ const customTheme = extendTheme({
             },
         }),
     },
-});
+} as ITheme);
 
-export default customTheme;
+export default customTheme as ITheme;
