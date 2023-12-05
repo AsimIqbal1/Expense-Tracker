@@ -1,6 +1,5 @@
 import {
     Box,
-    Button,
     Flex,
     FormControl,
     FormErrorMessage,
@@ -28,6 +27,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBaseball, faCar, faReceipt, faTrashCan, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { ADD_EXPENSE_FORMIK } from "./formik";
 import theme from "theme";
+import { StyledButton } from "ui/shared";
 
 const AddExpense = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -63,7 +63,7 @@ const AddExpense = () => {
 
     return (
         <>
-            <Button colorScheme="blue" onClick={onOpen}>Add Expense</Button>
+            <StyledButton colorScheme="blue" onClick={onOpen}>Add Expense</StyledButton>
 
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
@@ -212,12 +212,12 @@ const AddExpense = () => {
                                             ))}
 
                                             {/* WALLET ADD BUTTON */}
-                                            <Button
+                                            <StyledButton
                                                 variant={"outline"}
                                                 colorScheme="blue"
                                                 width={"100%"}
                                                 onClick={() => onAddWalletRequest(values.wallet, setFieldValue)}
-                                            > Attach{values.wallet.length > 0 ? " another" : ""} wallet</Button>
+                                            > Attach{values.wallet.length > 0 ? " another" : ""} wallet</StyledButton>
                                         </Flex>
                                     </FormControl>
                                     {/* WALLET FIELD */}
@@ -265,10 +265,10 @@ const AddExpense = () => {
                                 </ModalBody>
 
                                 <ModalFooter>
-                                    <Button variant='ghost' mr={3} onClick={onClose}>
+                                    <StyledButton variant='ghost' mr={3} onClick={onClose}>
                                         Cancel
-                                    </Button>
-                                    <Button colorScheme='blue' type="submit">Add</Button>
+                                    </StyledButton>
+                                    <StyledButton colorScheme='blue' type="submit">Add</StyledButton>
                                 </ModalFooter>
                             </ModalContent>
                         </form>

@@ -1,7 +1,6 @@
 import {
     IconButton,
     Box,
-    CloseButton,
     Flex,
     Text,
     Drawer,
@@ -13,7 +12,7 @@ import {
 
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import theme from 'theme';
 import { ISidebarProps, SidebarProps, NavItemProps, MobileProps } from './Sidebar.types';
 
@@ -47,6 +46,7 @@ export default function Sidebar(props: ISidebarProps) {
 
 const SidebarContent = (props: SidebarProps) => {
     const { onClose, pages, ...rest } = props;
+    const { pathname } = useLocation();
     const { colorMode } = useColorMode();
 
     return (
@@ -61,15 +61,14 @@ const SidebarContent = (props: SidebarProps) => {
                 <Text display={{ sm: "none", md: "block" }} fontSize={theme.fontSizes['3xl']} fontFamily={theme.fonts.bold} >
                     Bracker.
                 </Text>
-                <CloseButton display={{ sm: 'flex', md: 'none' }} onClick={onClose} />
+                {/* <CloseButton display={{ sm: 'flex', md: 'none' }} onClick={onClose} /> */}
             </Flex>
             <Flex
                 flexDir={"column"}
                 mt={theme.space.x8}
-            // mt={{ base: 'none', md: theme.space.x8 }}
             >
                 {pages.map((page) => (
-                    <NavItem key={page.name} page={page} onClose={onClose} />
+                    <NavItem key={page.name} page={page} isActive={pathname === page.route} onClose={onClose} />
                 ))}
             </Flex>
 
@@ -78,6 +77,7 @@ const SidebarContent = (props: SidebarProps) => {
 }
 
 const NavItem = (props: NavItemProps) => {
+    const { colorMode } = useColorMode();
 
     const {
         page: {
@@ -85,15 +85,16 @@ const NavItem = (props: NavItemProps) => {
             route,
             name
         },
+        isActive,
         onClose
     } = props;
-    const { colorMode } = useColorMode();
 
     return (
         <Box
             as={NavLink}
             to={route}
             onClick={onClose}
+            p={theme.space.x1}
             style={{ textDecoration: 'none' }}
             _focus={{ boxShadow: 'none' }}
         >
@@ -105,10 +106,12 @@ const NavItem = (props: NavItemProps) => {
                 borderRadius={theme.borderRadius.md}
                 role="group"
                 cursor="pointer"
-                _hover={{
-                    bg: theme.colors.primary[colorMode],
-                    color: theme.colors.text[colorMode],
-                }}
+                color={isActive ? theme.colors.text.dark : theme.colors.text[colorMode]}
+                bgGradient={isActive ? `linear(to-r, primary.${colorMode}, secondary.${colorMode})` : ''}
+            // _hover={{
+            //     bgGradient: `linear(to-r, secondary.${colorMode}, primary.${colorMode})`,
+            //     color: theme.colors.text.dark
+            // }}
             >
                 {icon && (
                     <Icon

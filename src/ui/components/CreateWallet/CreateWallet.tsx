@@ -1,11 +1,12 @@
-import { Button, FormControl, FormErrorMessage, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, NumberInput, NumberInputField, useDisclosure } from "@chakra-ui/react";
+import { FormControl, FormErrorMessage, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, NumberInput, NumberInputField, useDisclosure } from "@chakra-ui/react";
 import { Formik, Field, FieldProps } from "formik";
+import { StyledButton } from "ui/shared";
 
 const CreateWallet = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <>
-            <Button>Create Wallet</Button>
+            <StyledButton>Create Wallet</StyledButton>
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 {/* <Formik

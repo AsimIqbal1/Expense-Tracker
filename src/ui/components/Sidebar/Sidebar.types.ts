@@ -13,6 +13,7 @@ export interface SidebarProps extends BoxProps {
 
 export interface NavItemProps {
     page: IRoutePages;
+    isActive: boolean;
     onClose: () => void;
 }
 

@@ -1,4 +1,4 @@
-import { Avatar, AvatarGroup, Box, Button, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Tr, useDisclosure } from "@chakra-ui/react";
+import { Avatar, AvatarGroup, Box, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Tr, useColorMode, useDisclosure } from "@chakra-ui/react";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENCY } from "constants/UserConfig.constants";
@@ -6,11 +6,13 @@ import { useState } from "react";
 import { StyledCard } from "ui/shared";
 import { Transactions, WithCardWrapper } from "..";
 import { TRANSACTIONS } from "./RecentTransactions.data";
+import { StyledButton } from "ui/shared";
+import customTheme from "theme";
 
 const RecentTransactions = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const { colorMode } = useColorMode();
     const [openedTransaction, setOpenedTransaction] = useState<Transactions>();
 
     const onTransactionOpen = (transaction: any) => () => {
@@ -29,7 +31,7 @@ const RecentTransactions = () => {
                 <WithCardWrapper>
                     {TRANSACTIONS.map(transaction => (
                         // put in shadow on this flex box
-                        <Flex onClick={onTransactionOpen(transaction)} key={transaction.id} justifyContent="space-between" textAlign={"start"} _hover={{ backgroundColor: 'blue.200', cursor: 'pointer' }} borderRadius={"0.5rem"} p={"0.5rem 0.75rem"}>
+                        <Flex onClick={onTransactionOpen(transaction)} key={transaction.id} justifyContent="space-between" textAlign={"start"} _hover={{ bgGradient: `linear(to-r, primary.${colorMode}, secondary.${colorMode})`, cursor: 'pointer' }} borderRadius={"0.5rem"} p={"0.5rem 0.75rem"}>
                             <Flex gap={4} alignItems="center">
                                 <Avatar icon={transaction.category.icon} size="sm" background={"red.400"} />
                                 <Box gap={2}>
@@ -135,10 +137,10 @@ const RecentTransactions = () => {
                     </ModalBody>}
 
                     <ModalFooter>
-                        <Button variant='ghost' mr={3} onClick={onClose}>
+                        <StyledButton variant='ghost' mr={3} onClick={onClose}>
                             Close
-                        </Button>
-                        <Button colorScheme='blue'>Edit</Button>
+                        </StyledButton>
+                        <StyledButton colorScheme='blue'>Edit</StyledButton>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

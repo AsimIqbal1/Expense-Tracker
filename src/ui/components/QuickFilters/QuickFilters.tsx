@@ -1,5 +1,6 @@
 import { Button, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+import { StyledButton } from "ui/shared";
 
 const QuickFilters = () => {
     const [activeButton, setActiveButton] = useState(0);
@@ -25,14 +26,13 @@ const QuickFilters = () => {
     return (
         <Flex gap={2}>
             {buttons.map(button => (
-                <Button
+                <StyledButton
                     key={button.text}
-                    variant={activeButton === button.value ? "solid" : "ghost"}
-                    colorScheme="blue"
+                    variant={activeButton === button.value ? "gradient" : "ghost"}
                     onClick={onButtonClick(button.value)}
                 >
                     {button.text}
-                </Button>
+                </StyledButton>
             ))}
 
         </Flex>

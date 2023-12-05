@@ -1,7 +1,15 @@
 // import { Box, Container, Flex } from "@chakra-ui/layout";
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import { QuickFilters, TotalBalance, CategorizedExpense, RecentTransactions, AddExpense } from "ui/components";
-import { CreateWallet } from "ui/components/CreateWallet";
+import {
+    QuickFilters,
+    TotalBalance,
+    CategorizedExpense,
+    RecentTransactions,
+    AddExpense,
+    CreateWallet,
+    ExpenseTrend,
+    ThemeSwitcher
+} from "ui/components";
 
 const LandingPage = () => {
     return (
@@ -9,13 +17,14 @@ const LandingPage = () => {
             <Flex justifyContent="flex-end" pb="1rem" gap={2}>
                 <AddExpense />
                 <CreateWallet />
+                <ThemeSwitcher />
             </Flex>
 
             <Flex justify="space-between">
-                <Text fontFamily="custom-bold" fontSize={"3xl"}>Overview</Text>
+                <Text fontFamily="custom-bold" fontSize={"4xl"}>Morning, Asim!</Text>
                 <QuickFilters />
             </Flex>
-
+            <ExpenseTrend />
             <SimpleGrid minChildWidth={"18rem"} spacing={4} mt={"1rem"} >
                 {/* <Box><p>first</p><p>second</p></Box>
                 <Container><p>first</p><p>second</p></Container>

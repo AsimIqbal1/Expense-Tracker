@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react';
+import { StyleFunctionProps, extendTheme } from '@chakra-ui/react';
 
 type ColorMode = 'light' | 'dark';
 
@@ -29,6 +29,10 @@ interface ThemeColors {
         dark: string;
     };
     transparent: {
+        light: string;
+        dark: string;
+    };
+    error: {
         light: string;
         dark: string;
     };
@@ -82,14 +86,20 @@ interface ThemeSize {
     fullParentHeight: string;
 }
 
-interface ThemeButtonVariants {
-    solid: {
+interface ButtonVariantStyles {
+    bg: string;
+    color: string;
+    _hover: {
         bg: string;
-        color: string;
-        _hover: {
-            bg: string;
-        };
     };
+    [key: string]: any;
+}
+
+interface ThemeButtonVariants {
+    solid: ButtonVariantStyles
+    | ((props: StyleFunctionProps) => ButtonVariantStyles);
+    gradient: ButtonVariantStyles
+    | ((props: StyleFunctionProps) => ButtonVariantStyles);
 }
 
 interface ThemeComponents {
@@ -137,12 +147,13 @@ const customTheme = extendTheme({
     },
     colors: {
         primary: {
-            light: '#3498db',
-            dark: '#2980b9',
+            light: '#DB7CC2',
+            dark: '#DB7CC2',
         },
+
         secondary: {
-            light: '#e74c3c',
-            dark: '#c0392b',
+            light: '#A68EEE',
+            dark: '#A68EEE',
         },
         background: {
             light: '#ecf0f1',
@@ -151,6 +162,10 @@ const customTheme = extendTheme({
         text: {
             light: '#333',
             dark: '#ecf0f1',
+        },
+        error: {
+            light: '#d43833',
+            dark: '#d4534e'
         },
         border: {
             light: '#E6E6E6',
@@ -214,13 +229,30 @@ const customTheme = extendTheme({
                 borderRadius: 'md',
             },
             variants: {
-                solid: {
-                    bg: 'primary.light',
-                    color: 'white',
-                    _hover: {
-                        bg: 'primary.dark',
-                    },
+                solid: (props: StyleFunctionProps) => {
+                    const { colorMode } = props;
+                    return {
+                        bg: `primary[${colorMode}]`,
+                        color: 'white',
+                        _hover: {
+                            bg: `primary[${colorMode === 'light' ? 'dark' : 'light'}]`,
+                        },
+                    }
                 },
+                gradient: (props: StyleFunctionProps) => {
+                    const { colorMode } = props;
+                    return (
+                        {
+                            bgGradient: `linear(to-r, primary.${colorMode}, secondary.${colorMode})`,
+                            color: "white",
+                            _hover: {
+                                bgGradient: `linear(to-r, secondary.${colorMode}, primary.${colorMode})`,
+                            },
+                        }
+
+                    )
+
+                }
             },
         },
         Input: {
@@ -240,6 +272,6 @@ const customTheme = extendTheme({
             },
         }),
     },
-} as ITheme);
+});
 
 export default customTheme as ITheme;
