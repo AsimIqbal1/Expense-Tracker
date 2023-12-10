@@ -254,11 +254,6 @@ const customTheme = extendTheme({
                 }
             },
         },
-        Input: {
-            baseStyle: {
-                borderColor: 'primary.light',
-            },
-        },
     },
     styles: {
         global: (props: { colorMode: string; }) => ({
