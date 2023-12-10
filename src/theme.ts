@@ -150,7 +150,6 @@ const customTheme = extendTheme({
             light: '#DB7CC2',
             dark: '#DB7CC2',
         },
-
         secondary: {
             light: '#A68EEE',
             dark: '#A68EEE',

@@ -71,7 +71,6 @@ const AddExpense = () => {
                     initialValues={ADD_EXPENSE_FORMIK.initialValues}
                     validationSchema={ADD_EXPENSE_FORMIK.validationSchema}
                     onSubmit={(values) => {
-                        console.log("SDDD: ", values)
                         alert(JSON.stringify(values, null, 2));
                     }}
                 >

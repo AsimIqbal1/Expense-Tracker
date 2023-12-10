@@ -37,7 +37,7 @@ export default function Sidebar(props: ISidebarProps) {
             </Drawer>
             {/* mobilenav */}
             <MobileNav display={{ sm: 'flex', md: 'none' }} onOpen={onOpen} />
-            <Box ml={{ sm: 0, md: '18vw' }} p={theme.space.x4}>
+            <Box ml={{ sm: 0, md: '18vw' }} >
                 {children}
             </Box>
         </Box>

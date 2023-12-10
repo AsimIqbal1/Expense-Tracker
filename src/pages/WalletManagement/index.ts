@@ -1,0 +1,1 @@
+export { default as WalletManagement } from './WalletManagement';

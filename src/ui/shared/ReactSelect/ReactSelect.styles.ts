@@ -17,7 +17,7 @@ export const generateBaseSelectStyles = (colorMode: 'light' | 'dark') => ({
 
     menu: (baseStyles: CSSObjectWithLabel) => ({
         ...baseStyles,
-        borderRadius: theme.borderRadius.base,
+        borderRadius: theme.borderRadius.md,
         backgroundColor: theme.colors.background[colorMode],
     }),
 
@@ -29,7 +29,8 @@ export const generateBaseSelectStyles = (colorMode: 'light' | 'dark') => ({
         },
         ':hover': {
             backgroundColor: theme.colors.primary[colorMode],
-            cursor: 'pointer'
+            cursor: 'pointer',
+            borderRadius: theme.borderRadius.md,
         }
     }),
 
@@ -37,14 +38,25 @@ export const generateBaseSelectStyles = (colorMode: 'light' | 'dark') => ({
         ...baseStyles,
         backgroundColor: theme.colors.primary[colorMode],
         color: theme.colors.text[colorMode],
-        borderRadius: theme.borderRadius.base,
+        borderRadius: theme.borderRadius.md,
     }),
 
-    multiValueRemove: (baseStyles: CSSObjectWithLabel) => ({
+    // multiValueRemove: (baseStyles: CSSObjectWithLabel) => ({
+    //     ...baseStyles,
+    // }),
+
+    clearIndicator: (baseStyles: CSSObjectWithLabel) => ({
         ...baseStyles,
         ':hover': {
-            backgroundColor: theme.colors.primary[colorMode]
+            cursor: 'pointer',
         },
     }),
+    dropdownIndicator: (baseStyles: CSSObjectWithLabel) => ({
+        ...baseStyles,
+        ':hover': {
+            cursor: 'pointer',
+        },
+    }),
+
 
 })

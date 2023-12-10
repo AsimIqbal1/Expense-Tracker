@@ -1,22 +1,21 @@
 // import { Box, Container, Flex } from "@chakra-ui/layout";
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import theme from "theme";
 import {
     QuickFilters,
     TotalBalance,
     CategorizedExpense,
     RecentTransactions,
     AddExpense,
-    CreateWallet,
     ExpenseTrend,
     ThemeSwitcher
 } from "ui/components";
 
 const LandingPage = () => {
     return (
-        <Box>
+        <Box p={theme.space.x4}>
             <Flex justifyContent="flex-end" pb="1rem" gap={2}>
                 <AddExpense />
-                <CreateWallet />
                 <ThemeSwitcher />
             </Flex>
 
