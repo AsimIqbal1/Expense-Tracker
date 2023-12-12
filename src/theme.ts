@@ -32,6 +32,10 @@ interface ThemeColors {
         light: string;
         dark: string;
     };
+    success: {
+        light: string;
+        dark: string;
+    };
     error: {
         light: string;
         dark: string;
@@ -162,12 +166,16 @@ const customTheme = extendTheme({
             light: '#333',
             dark: '#ecf0f1',
         },
+        success: {
+            light: '#4fd18b',
+            dark: '#4fd18b'
+        },
         error: {
             light: '#d43833',
             dark: '#d4534e'
         },
         border: {
-            light: '#E6E6E6',
+            light: '#CCCCCC',
             dark: '#5C5C5C',
         },
         transparent: {

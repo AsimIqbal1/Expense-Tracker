@@ -88,11 +88,7 @@ const ExpenseTrend = () => {
             }
         ]
     };
-    return (
-        <>
-            <EChart option={option} style={{ height: "400px" }} />
-        </>
-    )
+    return (<EChart option={option} style={{ height: "400px" }} />)
 }
 
 export default ExpenseTrend;

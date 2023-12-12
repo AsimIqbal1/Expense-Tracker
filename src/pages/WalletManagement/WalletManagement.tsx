@@ -1,22 +1,22 @@
-import { Box, Flex } from "@chakra-ui/react";
-import { CreateWallet } from "./CreateWallet";
-import theme from "theme";
-import { WALLETS } from "./WalletManagement.data";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { BasicSelect } from "ui/shared/ReactSelect";
-import { useState } from "react";
+import { CreateWallet } from "./CreateWallet";
+import { WALLETS } from "./WalletManagement.data";
+import theme from "theme";
+import { WalletsOverview } from "./WalletsOverview";
 
 const WalletManagement = () => {
 
     // fetch all wallets on this page
     const wallets = WALLETS;
-    const [selectedWallets, setSelectedWallets] = useState(wallets);
 
     return (
         <Box p={theme.space.x4}>
-            <Flex p={theme.space.x4} justifyContent="space-between">
-                <Box minWidth={theme.size.x3} alignSelf={"start"}>
+            <Flex justifyContent="space-between">
+                <Box minWidth={theme.size.x3} >
+                    <Text>Wallets</Text>
                     <BasicSelect
-                        defaultValue={selectedWallets}
+                        defaultValue={wallets}
                         isMulti
                         options={wallets}
                         getOptionLabel={(option) => option.name}
@@ -24,9 +24,8 @@ const WalletManagement = () => {
                     />
                 </Box>
                 <CreateWallet />
-
             </Flex>
-
+            <WalletsOverview />
 
         </Box>
     )

@@ -41,7 +41,6 @@ const WalletManagement = () => {
                     {({ handleChange, handleSubmit, errors, touched }) => (
 
                         <form onSubmit={handleSubmit}>
-                            {console.log("touched", errors) as any}
                             <ModalContent>
                                 <ModalHeader>Add Wallet</ModalHeader>
                                 <ModalCloseButton />
