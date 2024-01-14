@@ -13,7 +13,7 @@ const WalletManagement = () => {
 
     return (
         <Box p={theme.space.x4} >
-            <Flex justifyContent="space-between" alignItems={"center"}>
+            <Flex justifyContent="space-between" alignItems={"center"} flexWrap="wrap">
                 <Box minWidth={theme.size.x3} >
                     <Text>Show data for wallets:</Text>
                     <BasicSelect

@@ -131,6 +131,13 @@ interface ThemeStyles {
         };
     };
 }
+interface Breakpoints {
+    sm: string;   // e.g., '30em'
+    md: string;   // e.g., '48em'
+    lg: string;   // e.g., '62em'
+    xl: string;   // e.g., '80em'
+    '2xl': string; // e.g., '96em'
+}
 
 interface ITheme {
     config: ThemeConfig;
@@ -142,6 +149,7 @@ interface ITheme {
     size: ThemeSize;
     components: ThemeComponents;
     styles: ThemeStyles;
+    breakpoints: Breakpoints
 }
 
 const customTheme = extendTheme({
@@ -274,6 +282,13 @@ const customTheme = extendTheme({
             },
         }),
     },
+    breakpoints: {
+        sm: '25rem',   // 480px and up (small screens, e.g., mobile devices)
+        md: '48rem',   // 768px and up (medium screens, e.g., tablets)
+        lg: '62em',   // 992px and up (large screens, e.g., small laptops)
+        xl: '80em',   // 1280px and up (extra-large screens, e.g., desktops)
+        '2xl': '96em', // 1536px and up (extra-large screens, e.g., larger desktops)
+    }
 });
 
 export default customTheme as ITheme;

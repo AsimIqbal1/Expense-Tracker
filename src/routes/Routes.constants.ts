@@ -20,7 +20,7 @@ export const ROUTE_PAGES: IRoutePage[] = [
   {
     id: 2,
     route: ROUTES.WALLETS,
-    name: 'Wallet Management',
+    name: 'Manage Wallets',
     icon: faWallet,
     Component: WalletManagement,
   },
