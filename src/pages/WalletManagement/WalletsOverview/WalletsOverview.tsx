@@ -16,7 +16,7 @@ const WalletsOverview = (_props: IWalletsOverviewProps) => {
         expense: 94000
     }
     return (
-        <Flex my={theme.space.x4} p={`${theme.space.x4} ${theme.space.x6}`} border={`1px solid ${theme.colors.border[colorMode]}`} borderRadius={theme.borderRadius.md} justifyContent={"space-between"} alignItems={'center'}>
+        <Flex my={theme.space.x2} p={`${theme.space.x4} ${theme.space.x6}`} border={`1px solid ${theme.colors.border[colorMode]}`} borderRadius={theme.borderRadius.md} justifyContent={"space-between"} alignItems={'center'}>
             <Box>
                 <Text fontSize={theme.fontSizes["lg"]}>Overall Balance</Text>
                 <Text fontSize={theme.fontSizes["3xl"]}>{CURRENCY} {beautifyNumber(data.totalBalance)}</Text>

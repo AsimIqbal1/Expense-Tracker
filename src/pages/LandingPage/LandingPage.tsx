@@ -14,13 +14,13 @@ import {
 const LandingPage = () => {
     return (
         <Box p={theme.space.x4}>
-            <Flex justifyContent="flex-end" pb="1rem" gap={2}>
+            {/* <Flex justifyContent="flex-end" pb="1rem" gap={2}>
                 <AddExpense />
                 <ThemeSwitcher />
-            </Flex>
+            </Flex> */}
 
-            <Flex justify="space-between">
-                <Text fontFamily="custom-bold" fontSize={"4xl"}>Morning, Asim!</Text>
+            <Flex justify="space-between" flexWrap="wrap">
+                <Text fontFamily="custom-bold" fontSize={"3xl"}>Morning, Asim!</Text>
                 <QuickFilters />
             </Flex>
             <ExpenseTrend />

@@ -63,7 +63,7 @@ const AddExpense = () => {
 
     return (
         <>
-            <StyledButton colorScheme="blue" onClick={onOpen}>Add Expense</StyledButton>
+            <StyledButton variant={"outline"} _hover={{ bgGradient: `linear(to-r, secondary.${colorMode}, primary.${colorMode})`, }} onClick={onOpen}>Add Expense</StyledButton>
 
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />

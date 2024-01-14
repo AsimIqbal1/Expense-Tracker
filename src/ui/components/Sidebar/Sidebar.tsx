@@ -14,11 +14,14 @@ import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink, useLocation } from 'react-router-dom';
 import theme from 'theme';
+import { Navbar } from 'ui/components';
 import { ISidebarProps, SidebarProps, NavItemProps, MobileProps } from './Sidebar.types';
+import { getActivePageName } from './Sidebar.utils';
 
 export default function Sidebar(props: ISidebarProps) {
     const { pages, children } = props;
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { pathname } = useLocation();
     return (
         <Box minH={theme.size.fullScreenHeight} >
             <SidebarContent onClose={() => onClose} display={{ sm: 'none', md: 'block' }} pages={pages} />
@@ -38,6 +41,7 @@ export default function Sidebar(props: ISidebarProps) {
             {/* mobilenav */}
             <MobileNav display={{ sm: 'flex', md: 'none' }} onOpen={onOpen} />
             <Box ml={{ sm: 0, md: '18vw' }} >
+                <Navbar pageName={getActivePageName(pathname)} />
                 {children}
             </Box>
         </Box>
@@ -51,7 +55,7 @@ const SidebarContent = (props: SidebarProps) => {
 
     return (
         <Box
-            borderRight="1px"
+            // borderRight="1px"
             borderRightColor={theme.colors.border[colorMode]}
             w={{ sm: 'full', md: '18vw' }}
             pos="fixed"
