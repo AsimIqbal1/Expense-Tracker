@@ -13,9 +13,9 @@ const WalletManagement = () => {
 
     return (
         <Box p={theme.space.x4} >
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" alignItems={"center"}>
                 <Box minWidth={theme.size.x3} >
-                    <Text>Wallets</Text>
+                    <Text>Show data for wallets:</Text>
                     <BasicSelect
                         defaultValue={wallets}
                         isMulti

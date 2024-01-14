@@ -29,7 +29,7 @@ const WalletManagement = () => {
     return (
         <>
             {/* <Flex h="100vh" justifyContent="center" alignItems="center" > */}
-            <StyledButton onClick={onOpen}>Create wallet</StyledButton>
+            <StyledButton variant={"outline"} onClick={onOpen}>Create wallet</StyledButton>
             {/* </Flex> */}
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />

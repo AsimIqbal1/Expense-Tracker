@@ -4,8 +4,7 @@ import { StyledSelectWrapper } from "../ReactSelectHOC";
 
 const BasicSelect = <T,>(props: IBasicSelectProps<T, boolean>) => (
     <StyledSelectWrapper>
-        <ReactSelect
-            {...props} />
+        <ReactSelect {...props} />
     </StyledSelectWrapper>
 
 )
