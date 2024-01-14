@@ -11,12 +11,16 @@ export interface INavbarProps {
 // TODO: Add a dates filter on navbar
 const Navbar = (props: INavbarProps) => {
     const { pageData: { name, icon } } = props;
-    // const { colorMode } = useColorMode();
+    const { colorMode } = useColorMode();
     return (
         <Flex
             p={theme.space.x4}
             // borderBottom={`1px solid ${theme.colors.border[colorMode]}`}
             alignItems={"center"}
+            position={"sticky"}
+            top={0}
+            bg={theme.colors.background[colorMode]}
+            zIndex={1300}
         >
             {/* <Icon
                 mr={theme.space.x6}
