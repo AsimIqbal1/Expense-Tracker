@@ -8,3 +8,4 @@ export * from './Sidebar';
 export * from './ThemeSwitcher';
 export * from './ExpenseTrend';
 export * from './Navbar';
+export * from './TransactionDetailsModal';

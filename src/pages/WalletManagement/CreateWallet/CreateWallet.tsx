@@ -69,10 +69,7 @@ const WalletManagement = () => {
                                 </ModalFooter>
                             </ModalContent>
                         </form>
-                    )
-
-                    }
-
+                    )}
                 </Formik>
             </Modal>
         </>

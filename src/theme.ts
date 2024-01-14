@@ -176,7 +176,7 @@ const customTheme = extendTheme({
         },
         border: {
             light: '#CCCCCC',
-            dark: '#5C5C5C',
+            dark: '#FFFFFF14',
         },
         transparent: {
             light: 'transparent',

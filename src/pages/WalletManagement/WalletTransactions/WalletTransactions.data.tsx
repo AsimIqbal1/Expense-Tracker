@@ -1,7 +1,8 @@
 import { faBowlFood } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Transaction } from "ui/components";
 
-export const WalletTransactionsData = [
+export const WalletTransactionsData: Transaction[] = [
     {
         id: 0,
         merchant: 'Daraz.pk Karachi pk',
@@ -12,7 +13,7 @@ export const WalletTransactionsData = [
             name: 'Grocery',
             icon: <FontAwesomeIcon icon={faBowlFood} />,
         },
-        notes: 'honey',
+        details: 'honey',
         wallets: [
             {
                 id: 0,
@@ -37,7 +38,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -62,7 +63,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -87,7 +88,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -112,7 +113,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -137,7 +138,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -162,7 +163,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -187,7 +188,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,
@@ -212,7 +213,7 @@ export const WalletTransactionsData = [
             icon: <FontAwesomeIcon icon={faBowlFood} />,
 
         },
-        notes: 'cricket',
+        details: 'cricket',
         wallets: [
             {
                 id: 0,

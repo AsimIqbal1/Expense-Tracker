@@ -1,9 +1,14 @@
 import { ROUTE_PAGES } from "routes";
 
 export function getActivePageName(currentPath: string) {
+    let pageData;
     for (let i = 0; i < ROUTE_PAGES.length; i++) {
-        const { route, name } = ROUTE_PAGES[i];
-        if (route === currentPath) return name;
+        const { route } = ROUTE_PAGES[i];
+        if (route === currentPath) {
+            pageData = ROUTE_PAGES[i];
+            break;
+        }
     }
-    return '';
+
+    return pageData!;
 }

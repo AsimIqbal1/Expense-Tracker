@@ -41,7 +41,7 @@ export default function Sidebar(props: ISidebarProps) {
             {/* mobilenav */}
             <MobileNav display={{ sm: 'flex', md: 'none' }} onOpen={onOpen} />
             <Box ml={{ sm: 0, md: '18vw' }} >
-                <Navbar pageName={getActivePageName(pathname)} />
+                <Navbar pageData={getActivePageName(pathname)} />
                 {children}
             </Box>
         </Box>

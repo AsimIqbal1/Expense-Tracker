@@ -25,7 +25,9 @@ const WalletManagement = () => {
                     />
                 </Box>
                 <CreateWallet />
+                {/* TODO: Manage wallet button */}
             </Flex>
+
             <Text fontSize={theme.fontSizes["4xl"]} mt={theme.space.x3}>Overview</Text>
             <WalletsOverview />
             <Text fontSize={theme.fontSizes["4xl"]} mt={theme.space.x3}>Transactions</Text>

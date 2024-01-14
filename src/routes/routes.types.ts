@@ -4,7 +4,7 @@ export interface IRoutes {
     [key: string]: string
 }
 
-export interface IRoutePages {
+export interface IRoutePage {
     id: number;
     route: string;
     name: string;

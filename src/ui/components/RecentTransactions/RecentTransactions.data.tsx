@@ -1,18 +1,19 @@
 import { faBowlFood, faDollar, faReceipt, faCreditCard, faBowlingBall } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Transactions } from ".";
+import { Transaction } from "./RecentTransactions.types";
 
-export const TRANSACTIONS: Transactions[] = [
+export const TRANSACTIONS: Transaction[] = [
     {
         id: 1,
         date: "02-11-2023",
-        title: 'Lunch share to ahmed',
+        merchant: 'Daraz.pk karachi pk',
+        details: 'Lunch share to ahmed',
         category: {
             id: 1,
             name: 'Lunch',
             icon: <FontAwesomeIcon icon={faBowlFood} />,
         },
-        paidThroughWallet: [
+        wallets: [
             {
                 id: 1,
                 name: 'Cash',
@@ -21,18 +22,18 @@ export const TRANSACTIONS: Transactions[] = [
             },
         ],
         amount: 500,
-        details: ''
     },
     {
         id: 2,
         date: "02-11-2023",
-        title: 'Electricity Bill',
+        merchant: 'Daraz.pk karachi pk',
+        details: 'Electricity Bill',
         category: {
             id: 2,
             name: 'Bills',
             icon: <FontAwesomeIcon icon={faReceipt} />,
         },
-        paidThroughWallet: [
+        wallets: [
             {
                 id: 2,
                 name: 'Bank Account',
@@ -41,18 +42,18 @@ export const TRANSACTIONS: Transactions[] = [
             },
         ],
         amount: 4300,
-        details: ''
     },
     {
         id: 3,
         date: "02-11-2023",
-        title: 'Cricket',
+        merchant: 'Daraz.pk karachi pk',
+        details: 'Cricket',
         category: {
             id: 3,
             name: 'Sports',
             icon: <FontAwesomeIcon icon={faBowlingBall} />,
         },
-        paidThroughWallet: [
+        wallets: [
             {
                 id: 1,
                 name: 'Cash',
@@ -67,6 +68,5 @@ export const TRANSACTIONS: Transactions[] = [
             },
         ],
         amount: 1200,
-        details: ''
     },
 ]

@@ -1,13 +1,16 @@
-import { Box, Divider, Flex, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Divider, Flex, Icon, Text, useColorMode } from "@chakra-ui/react";
+import { IRoutePage } from "routes/routes.types";
 import theme from "theme";
 import { AddExpense, ThemeSwitcher } from "ui/components";
 
 export interface INavbarProps {
-    pageName: string;
+    pageData: IRoutePage;
 }
 
+
+// TODO: Add a dates filter on navbar
 const Navbar = (props: INavbarProps) => {
-    const { pageName } = props;
+    const { pageData: { name, icon } } = props;
     // const { colorMode } = useColorMode();
     return (
         <Flex
@@ -15,7 +18,13 @@ const Navbar = (props: INavbarProps) => {
             // borderBottom={`1px solid ${theme.colors.border[colorMode]}`}
             alignItems={"center"}
         >
-            <Text fontSize={theme.fontSizes["4xl"]}>{pageName}</Text>
+            {/* <Icon
+                mr={theme.space.x6}
+                size="2xl"
+                icon={icon}
+                as={FontAwesomeIcon}
+            /> */}
+            <Text fontSize={theme.fontSizes["4xl"]}>{name}</Text>
 
             <Box marginLeft={"auto"}>
                 <AddExpense />
