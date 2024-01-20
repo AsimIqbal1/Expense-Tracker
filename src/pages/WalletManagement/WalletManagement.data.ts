@@ -1,4 +1,6 @@
-export const WALLETS = [
+import { Wallet } from "./WalletManagement.types";
+
+export const WALLETS: Array<Wallet> = [
 
     {
         id: 1,

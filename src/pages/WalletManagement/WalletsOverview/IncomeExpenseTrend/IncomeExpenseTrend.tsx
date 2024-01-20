@@ -47,7 +47,7 @@ const IncomeExpenseTrend = (props: IIncomeExpenseTrendProps) => {
         },
         xAxis: {
             boundaryGap: false,
-            axisLabel: { show: false },
+            // axisLabel: { show: false },
             data: dateList,
         },
         yAxis: {
@@ -74,7 +74,7 @@ const IncomeExpenseTrend = (props: IIncomeExpenseTrendProps) => {
                         y2: 1,
                         colorStops: [
                             {
-                                offset: 0, color: theme.colors.success[colorMode]  // color at 0% position
+                                offset: 0, color: theme.colors.primary[colorMode]  // color at 0% position
                             },
                             {
                                 offset: 1, color: theme.colors.background[colorMode] // color at 100% position
@@ -100,7 +100,7 @@ const IncomeExpenseTrend = (props: IIncomeExpenseTrendProps) => {
                         y2: 1,
                         colorStops: [
                             {
-                                offset: 0, color: theme.colors.error[colorMode]  // color at 0% position
+                                offset: 0, color: theme.colors.secondary[colorMode]  // color at 0% position
                             },
                             {
                                 offset: 1, color: theme.colors.background[colorMode] // color at 100% position

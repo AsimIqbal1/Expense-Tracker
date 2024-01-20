@@ -5,6 +5,7 @@ import { CreateWallet } from "./CreateWallet";
 import { WALLETS } from "./WalletManagement.data";
 import { WalletsOverview } from "./WalletsOverview";
 import { WalletTransactions } from "./WalletTransactions";
+import { ManageWallet } from "./ManageWallet";
 
 const WalletManagement = () => {
 
@@ -24,8 +25,10 @@ const WalletManagement = () => {
                         getOptionValue={(option) => String(option.id)}
                     />
                 </Box>
-                <CreateWallet />
-                {/* TODO: Manage wallet button */}
+                <Flex gap={theme.space.x2}>
+                    <CreateWallet />
+                    <ManageWallet wallets={wallets} />
+                </Flex>
             </Flex>
 
             <Text fontSize={theme.fontSizes["4xl"]} mt={theme.space.x3}>Overview</Text>

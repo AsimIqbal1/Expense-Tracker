@@ -1,5 +1,4 @@
 import {
-    Flex,
     FormControl,
     FormErrorMessage,
     FormLabel,
@@ -28,9 +27,7 @@ const WalletManagement = () => {
 
     return (
         <>
-            {/* <Flex h="100vh" justifyContent="center" alignItems="center" > */}
-            <StyledButton variant={"outline"} onClick={onOpen}>Create wallet</StyledButton>
-            {/* </Flex> */}
+            <StyledButton variant={"outline"} onClick={onOpen}>Create Wallet</StyledButton>
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <Formik

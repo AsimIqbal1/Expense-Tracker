@@ -1,6 +1,6 @@
 import { faChartLine, faWallet, faGear, faPencil } from "@fortawesome/free-solid-svg-icons";
-import { IRoutePage, IRoutes } from "./routes.types";
 import { LandingPage, CustomizePage, WalletManagement } from "pages";
+import { IRoutePage, IRoutes } from "./routes.types";
 
 export const ROUTES: IRoutes = {
   LANDING: '/',
@@ -20,7 +20,7 @@ export const ROUTE_PAGES: IRoutePage[] = [
   {
     id: 2,
     route: ROUTES.WALLETS,
-    name: 'Manage Wallets',
+    name: 'Wallets',
     icon: faWallet,
     Component: WalletManagement,
   },

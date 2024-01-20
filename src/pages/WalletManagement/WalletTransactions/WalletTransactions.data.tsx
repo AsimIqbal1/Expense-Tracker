@@ -21,7 +21,7 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
@@ -46,14 +46,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 2,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -71,14 +71,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 3,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -96,14 +96,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 4,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -121,14 +121,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 5,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -146,14 +146,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 6,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -171,14 +171,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 7,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -196,14 +196,14 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },
         ]
     },
     {
-        id: 1,
+        id: 8,
         merchant: 'Ahmed',
         date: '10:40 PM, 24 Dec, 2023',
         amount: 400,
@@ -221,7 +221,7 @@ export const WalletTransactionsData: Transaction[] = [
                 amount: 300
             },
             {
-                id: 0,
+                id: 1,
                 name: 'cash',
                 amount: 100
             },

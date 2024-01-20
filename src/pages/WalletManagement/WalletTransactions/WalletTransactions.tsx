@@ -26,12 +26,12 @@ const WalletTransactions = (_props: IWalletTransactionsProps) => {
     return (
         <Flex my={theme.space.x2} p={theme.space.x4} border={`1px solid ${theme.colors.border[colorMode]}`} borderRadius={theme.borderRadius.md} flexDir="column" gap={theme.space.x4} >
             {walletTransactions.map(transaction => (
-                <Flex border={`1px solid ${theme.colors.border[colorMode]}`} color={theme.colors.text[colorMode]} p={theme.space.x3} borderRadius={theme.borderRadius.md} align="center" _hover={{ bg: theme.colors.border[colorMode], cursor: 'pointer' }} flexWrap="wrap" onClick={showTransactionDetails(transaction)}>
+                <Flex key={transaction.id} border={`1px solid ${theme.colors.border[colorMode]}`} color={theme.colors.text[colorMode]} p={theme.space.x3} borderRadius={theme.borderRadius.md} align="center" _hover={{ bg: theme.colors.border[colorMode], cursor: 'pointer' }} flexWrap="wrap" onClick={showTransactionDetails(transaction)}>
                     <Text width={theme.size.x3}>{transaction.merchant}</Text>
                     <Text width={theme.size.x3}>{transaction.date}</Text>
                     <Box width={theme.size.x3}>
                         {transaction.wallets.map(wallet => (
-                            <Tooltip label={`${CURRENCY} ${wallet.amount}`}>
+                            <Tooltip key={wallet.id} label={`${CURRENCY} ${wallet.amount}`}>
                                 <Tag ml={theme.space.x1}>{wallet.name}</Tag>
                             </Tooltip>
                         ))}
