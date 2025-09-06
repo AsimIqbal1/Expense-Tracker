@@ -76,7 +76,7 @@ const AddExpense = () => {
                 >
                     {({ handleSubmit, errors, touched, setFieldValue, values }) => (
                         <form onSubmit={handleSubmit}>
-                            <ModalContent>
+                            <ModalContent width={{ base: "90%", md: "60%", lg: "40%" }} maxWidth="600px" maxHeight={"80vh"} overflowY="auto">
                                 <ModalHeader>Add new expense</ModalHeader>
                                 <ModalCloseButton />
                                 <ModalBody>
@@ -130,23 +130,23 @@ const AddExpense = () => {
                                                                         options={[
                                                                             {
                                                                                 value: '1',
-                                                                                label: 'option 1',
+                                                                                label: 'Cash',
                                                                             },
                                                                             {
                                                                                 value: '2',
-                                                                                label: 'option 2',
+                                                                                label: 'Revolut',
                                                                             },
                                                                             {
                                                                                 value: '3',
-                                                                                label: 'option 3',
+                                                                                label: 'Paypal',
                                                                             },
                                                                             {
                                                                                 value: '4',
-                                                                                label: 'option 4',
+                                                                                label: 'Bank Transfer',
                                                                             },
                                                                             {
                                                                                 value: '5',
-                                                                                label: 'option 5',
+                                                                                label: 'Wise',
                                                                             },
                                                                         ]}
                                                                         onChange={
